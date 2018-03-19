@@ -3,6 +3,7 @@ package duz.albert.boitzo;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Scanner;
 
@@ -27,16 +28,26 @@ public class Help {
         if(array.isEmpty()) {
             category.put("children", "alternatives");
 
-            JSONArray mainPreferences = new JSONArray();
+            double[][] pref = new double[alternatives.size()][];
+            for(int i = 0; i < alternatives.size(); i++) pref[i] = new double[alternatives.size()];
 
+            for(int i = 0; i < alternatives.size(); i++) {
+                for(int j = 0; j < i; j++) {
+                    System.out.println("How do you prefer " + alternatives.get(i) + " over " + alternatives.get(j) + "?");
+                    pref[i][j] = reader.nextDouble();
+                    pref[j][i] = 1 / pref[i][j];
+                }
+                System.out.println(pref[i][i]);
+                pref[i][i] = 1;
+            }
+
+            JSONArray mainPreferences = new JSONArray();
 
             for(int i = 0; i < alternatives.size(); i++) {
                 JSONArray rowPreferences = new JSONArray();
 
                 for(int j = 0; j < alternatives.size(); j++) {
-                    System.out.println("How do you prefer " + alternatives.get(i) + " over " + alternatives.get(j) + "?");
-                    answer = reader.nextLine();
-                    rowPreferences.add(answer);
+                    rowPreferences.add(pref[i][j]);
                 }
                 mainPreferences.add(rowPreferences);
             }
@@ -45,16 +56,26 @@ public class Help {
         }
         else {
             category.put("children", array);
-            JSONArray mainPreferences = new JSONArray();
 
+            double[][] pref = new double[array.size()][];
+            for(int i = 0; i < array.size(); i++) pref[i] = new double[array.size()];
+
+            for(int i = 0; i < array.size(); i++) {
+                for(int j = 0; j < i; j++) {
+                    System.out.println("How do you prefer " + ((JSONObject) array.get(i)).get("name") + " over " + ((JSONObject) array.get(j)).get("name") + "?");
+                    pref[i][j] = reader.nextDouble();
+                    pref[j][i] = 1 / pref[i][j];
+                }
+                pref[i][i] = 1;
+            }
+
+            JSONArray mainPreferences = new JSONArray();
 
             for(int i = 0; i < array.size(); i++) {
                 JSONArray rowPreferences = new JSONArray();
 
                 for(int j = 0; j < array.size(); j++) {
-                    System.out.println("How do you prefer " + ((JSONObject) array.get(i)).get("name") + " over " + ((JSONObject) array.get(j)).get("name") + "?");
-                    answer = reader.nextLine();
-                    rowPreferences.add(answer);
+                    rowPreferences.add(pref[i][j]);
                 }
                 mainPreferences.add(rowPreferences);
             }
@@ -98,6 +119,12 @@ public class Help {
 
         String jsonText = out.toString();
         System.out.print(jsonText);
+
+        try{
+            PrintWriter writer = new PrintWriter("ahp.json", "UTF-8");
+            writer.println(jsonText);
+            writer.close();
+        } catch(Exception e) {}
 
         reader.close();
     }
