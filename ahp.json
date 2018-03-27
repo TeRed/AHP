@@ -1,1 +1,78 @@
-{"goal":{"preferences":[[1.0,0.14285714285714285],[7.0,1.0]],"children":[{"preferences":[[1.0,0.3333333333333333],[3.0,1.0]],"children":"alternatives","name":"price"},{"preferences":[[1.0,0.16666666666666666],[6.0,1.0]],"children":"alternatives","name":"home"}],"name":"Buy"},"alternatives":["Honda","Civic"]}
+{
+  "goal": {
+    "preferences": [
+      [
+        1.0,
+        0.2
+      ],
+      [
+        5.0,
+        1.0
+      ]
+    ],
+    "children": [
+      {
+        "preferences": [
+          [
+            1.0,
+            0.5
+          ],
+          [
+            2.0,
+            1.0
+          ]
+        ],
+        "children": "alternatives",
+        "name": "Price"
+      },
+      {
+        "preferences": [
+          [
+            1.0,
+            0.1111111111111111
+          ],
+          [
+            9.0,
+            1.0
+          ]
+        ],
+        "children": [
+          {
+            "preferences": [
+              [
+                1.0,
+                0.25
+              ],
+              [
+                4.0,
+                1.0
+              ]
+            ],
+            "children": "alternatives",
+            "name": "Air conditioning"
+          },
+          {
+            "preferences": [
+              [
+                1.0,
+                0.14285714285714285
+              ],
+              [
+                7.0,
+                1.0
+              ]
+            ],
+            "children": "alternatives",
+            "name": "Heat"
+          }
+        ],
+        "name": "Comfort"
+      }
+    ],
+    "name": "Buy a car"
+  },
+  "alternatives": [
+    "Honda",
+    "Toyota"
+  ]
+}
