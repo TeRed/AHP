@@ -1,0 +1,29 @@
+{
+  "alternatives": ["honda", "mitsubishi", "ford"],
+  "goal": {
+    "name": "Family Car",
+    "preferences": [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]],
+    "children": [
+      {
+        "name": "Comfort",
+        "preferences": [[1, 2, 3], [1, 2, 3], [1, 2, 3]],
+        "children": "alternatives"
+      },
+      {
+        "name": "Horse Power",
+        "preferences": [[1, 2, 3], [1, 2, 3], [1, 2, 3]],
+        "children": "alternatives"
+      },
+      {
+        "name": "Price",
+        "preferences": [[1, 2, 3], [1, 2, 3], [1, 2, 3]],
+        "children": "alternatives"
+      },
+      {
+        "name": "Safety",
+        "preferences": [[1, 2, 3], [1, 2, 3], [1, 2, 3]],
+        "children": "alternatives"
+      }
+    ]
+  }
+}

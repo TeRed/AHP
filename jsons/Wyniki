@@ -1,0 +1,35 @@
+ahp.json (macierz złych wymiarów, dodałem 4)
+
+Eigen Method: honda mitsubishi ford
+0.3333333333333335 0.3333333333333332 0.3333333333333333
+
+Mean Method: honda mitsubishi ford
+0.33333333333333337 0.33333333333333337 0.33333333333333337
+
+data.json (tak samo, bez wyników)
+
+ex3.json
+
+Eigen Method: Paryż Seszele Nicea
+0.2491378705374715 0.3681140593295942 0.38274807013293444
+
+Mean Method: Paryż Seszele Nicea
+0.24672372402281065 0.36341627724289594 0.38985999873429344
+
+o1.txt
+
+Eigen Method: Audi Masserati
+0.5 0.5
+
+Mean Method: Audi Masserati
+0.5 0.5
+
+test.json, test2.json (żle, macierz z zerami)
+
+ultimate_test.json
+
+Eigen Method: A1 A2 A3
+0.5215446809449866 0.3256593978959005 0.15279592115911278
+
+Mean Method: A1 A2 A3
+0.5215459965833019 0.32565874967225467 0.1527952537444433

@@ -1,1 +1,1 @@
-{"goal":{"preferences":[[1.0]],"children":[{"preferences":[[1.0,0.2],[5.0,1.0]],"children":"alternatives","name":"Price"}],"name":"Buy a car"},"alternatives":["Honda","Civic"]}
+{"goal":{"preferences":[[1.0]],"children":"alternatives","name":"qwety"},"alternatives":["hello"]}

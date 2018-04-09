@@ -1,0 +1,30 @@
+{
+  "alternatives": [
+    "Lizak",
+    "Guma"
+  ],
+  "goal": {
+    "preferences": [
+      [
+        1
+      ]
+    ],
+    "children": [
+      {
+        "preferences": [
+          [
+            1,
+            2
+          ],
+          [
+            34,
+            4
+          ]
+        ],
+        "children": "alternatives",
+        "name": "cena"
+      }
+    ],
+    "name": "Kup"
+  }
+}

@@ -106,7 +106,7 @@ public class CreateJSON {
 
         // Printing to console
         System.out.println("JSON:");
-        System.out.print(out.toString());
+        System.out.print(out.toString() + "\n");
 
         // Printing to file if possible
         if(writer != null) {

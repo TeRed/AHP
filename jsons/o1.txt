@@ -1,68 +1,6 @@
 {
-  "alternatives": [
-    "Audi",
-    "Maserrati"
-  ],
   "goal": {
-    "children": [
-      {
-        "children": "alternatives",
-        "preferences": [
-          [
-            1.0,
-            2.0
-          ],
-          [
-            2.0,
-            1.0
-          ]
-        ],
-        "name": "Cena"
-      },
-      {
-        "children": [
-          {
-            "children": "alternatives",
-            "preferences": [
-              [
-                1.0,
-                2.0
-              ],
-              [
-                2.0,
-                1.0
-              ]
-            ],
-            "name": "dres"
-          },
-          {
-            "children": "alternatives",
-            "preferences": [
-              [
-                1.0,
-                2.0
-              ],
-              [
-                2.0,
-                1.0
-              ]
-            ],
-            "name": "gentleman"
-          }
-        ],
-        "preferences": [
-          [
-            1.0,
-            0.1
-          ],
-          [
-            10.0,
-            1.0
-          ]
-        ],
-        "name": "Prestiz"
-      }
-    ],
+    "name": "Kupno",
     "preferences": [
       [
         1.0,
@@ -73,6 +11,68 @@
         1.0
       ]
     ],
-    "name": "Kupno"
-  }
+    "children": [
+      {
+        "name": "Cena",
+        "preferences": [
+          [
+            1.0,
+            2.0
+          ],
+          [
+            2.0,
+            1.0
+          ]
+        ],
+        "children": "alternatives"
+      },
+      {
+        "name": "Prestiz",
+        "preferences": [
+          [
+            1.0,
+            0.5
+          ],
+          [
+            2.0,
+            1.0
+          ]
+        ],
+        "children": [
+          {
+            "name": "dres",
+            "preferences": [
+              [
+                1.0,
+                2.0
+              ],
+              [
+                2.0,
+                1.0
+              ]
+            ],
+            "children": "alternatives"
+          },
+          {
+            "name": "gentleman",
+            "preferences": [
+              [
+                1.0,
+                2.0
+              ],
+              [
+                2.0,
+                1.0
+              ]
+            ],
+            "children": "alternatives"
+          }
+        ]
+      }
+    ]
+  },
+  "alternatives": [
+    "Audi",
+    "Masserati"
+  ]
 }
